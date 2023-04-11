@@ -14,10 +14,16 @@ class BookingController extends Controller
 {
 	public function index()
 	{
-		$bookings = Booking::all();
+		$bookings = Booking::orderBy('date','DESC')->get();
 		$booking_types = BookingType::all();
 		$estates = Estate::all();
-		return view('booking',compact('bookings','estates','booking_types'));
+		
+		$statistics =[
+			"january" => 234,
+			"april" => Booking::where('booking_type',1)->sum('sum') - Booking::where('booking_type',0)->sum('sum')
+		];
+		
+		return view('booking',compact('bookings','estates','booking_types','statistics'));
 	}
 	
     public function store(Request $request)
