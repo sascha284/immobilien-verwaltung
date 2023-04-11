@@ -16,7 +16,8 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('estate_id');
-            $table->unsignedBigInteger('booking_types_id');
+            $table->unsignedBigInteger('booking_type_id');
+            $table->unsignedBigInteger('bank_account_id');
             $table->boolean('booking_type')->default(0);
             $table->string('sum',10)->nullable();
             $table->datetime('date')->nullable();
