@@ -15,12 +15,12 @@ class CreateBookingTypesTable extends Migration
     {
         Schema::create('booking_types', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
+            $table->string('name');
             $table->timestamps();
         });
         
         Schema::table('bookings', function (Blueprint $table) {
-    		$table->foreign('booking_types_id')->references('id')->on('booking_types');
+    		$table->foreign('booking_type_id')->references('id')->on('booking_types');
         });
     }
 
