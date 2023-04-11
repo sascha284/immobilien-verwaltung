@@ -90,21 +90,32 @@
                 		 <option value="{{ $estate->id }}" class="form-control">{{ $estate->address }}</option>
                 		 @endforeach
                 		</select>  
-                		<select name="booking_types_id">
+                		<select name="booking_type_id">
                 		 @foreach($booking_types as $booking_type)
-                		 <option value="{{ $booking_type->id }}" class="form-control">{{ $booking_type->type }}</option>
+                		 <option value="{{ $booking_type->id }}" class="form-control">{{ $booking_type->name }}</option>
                 		 @endforeach
                 		</select>    
                 		<select name="booking_type">
                 		 <option value="1" class="form-control">Eingang</option>
                 		 <option value="0" class="form-control">Ausgang</option>
-                		</select>           		
+                		</select>      
+                		<input type="hidden" name="bank_account_id" value="1">     		
 						<input type="submit">
 
                 </form>
+                	<table>
+                		<tr>
+                			<td>Januar</td>
+                			<td>Februar</td>
+                			<td>März</td><td>April</td>
+                		</tr>
+                		<tr><td>{{ $statistics['january'] }}</td><td>&nbsp;x</td><td>&nbsp;x</td><td>{{ $statistics['april'] }}</td></tr>
+                	</table>
+                	<table>
                 		 @foreach($bookings as $booking)
-                		  
+                		  <tr><td>{{ $booking->date }}<td><td>{{ $booking->sum }}<td></tr>
                 		 @endforeach
+                	</table>
             </div>
         </div>
     </body>
