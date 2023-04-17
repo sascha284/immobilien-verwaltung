@@ -64,6 +64,7 @@
         </style>
     </head>
     <body>
+     <a href="estates">Dashboard</a> / <a href="estates">Immobilien</a> / <a href="other">Buchungen</a> / <a href="other">Sonstige Buchungen</a>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -107,13 +108,22 @@
                 		<tr>
                 			<td>Januar</td>
                 			<td>Februar</td>
-                			<td>März</td><td>April</td>
+                			<td>März</td>
+                			<td>April</td>
+                			<td>Mai</td>
+                			<td>Juni</td>
+                			<td>Juli</td>
+                			<td>August</td>
+                			<td>September</td>
+                			<td>Oktober</td>
+                			<td>November</td>
+                			<td>Dezember</td>
                 		</tr>
                 		<tr><td>{{ $statistics['january'] }}</td><td>&nbsp;x</td><td>&nbsp;x</td><td>{{ $statistics['april'] }}</td></tr>
                 	</table>
                 	<table>
                 		 @foreach($bookings as $booking)
-                		  <tr><td>{{ $booking->date }}<td><td>{{ $booking->sum }}<td></tr>
+                		  <tr><td>{{ date('d.m.Y', strtotime($booking->date)) }}<td><td>{{ $booking->sum }}<td></tr>
                 		 @endforeach
                 	</table>
             </div>
