@@ -13,5 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    Route::resource('/', 'BookingController');
-
+Route::resource('/', 'BookingController');
+Route::resource('other', 'OtherBookingController');
+Route::resource('estates', 'EstateController');
