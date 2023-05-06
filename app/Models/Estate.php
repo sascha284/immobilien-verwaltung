@@ -11,4 +11,9 @@ class Estate extends Model
     protected $fillable = [
     	'address',
     ]; 
+    
+    public function bookings()
+    {
+        return $this->hasMany('App\Models\Booking');
+    }    
 }
