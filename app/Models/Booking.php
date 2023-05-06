@@ -19,4 +19,9 @@ class Booking extends Model
 		'sum',
 		'date',
     ];  
+    
+    public function estates()
+    {
+        return $this->belongsTo('estates');
+    }
 }
