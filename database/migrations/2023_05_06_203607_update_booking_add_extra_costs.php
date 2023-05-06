@@ -13,7 +13,7 @@ class UpdateBookingAddExtraCosts extends Migration
      */
     public function up()
     {
-        Schema::table('todos', function (Blueprint $table) {
+        Schema::table('bookings', function (Blueprint $table) {
             $table->string('extra_costs')->after('sum')->nullable();
         });
     }
@@ -25,7 +25,7 @@ class UpdateBookingAddExtraCosts extends Migration
      */
     public function down()
     {
-        Schema::table('todos', function (Blueprint $table) {
+        Schema::table('bookings', function (Blueprint $table) {
             $table->dropColumn('extra_costs');
         });
     }
