@@ -95,7 +95,7 @@
                 </form>
                 	<table>
                 		 @foreach($estates as $estate)
-                		  <tr><td>{{$estate->id}}<td><td><a href="estates/{{$estate->id}}">show</a><td></tr>
+                		  <tr><td>{{$estate->id}}<td><td>{{$estate->address}}</td><td>{{$estate->sum}}</td><td><a href="estates/{{$estate->id}}">show</a><td></tr>
                 		 @endforeach
                 	</table>
             </div>
