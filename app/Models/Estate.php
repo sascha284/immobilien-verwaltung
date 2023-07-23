@@ -14,6 +14,6 @@ class Estate extends Model
     
     public function bookings()
     {
-        return $this->hasMany('App\Models\Booking');
+        return $this->hasMany(Booking::class);
     }    
 }
