@@ -17,11 +17,17 @@ class Booking extends Model
     	'booking_type_id',
     	'bank_account_id',
 		'sum',
+		'extra_costs',
 		'date',
     ];  
     
-    public function estates()
+    public function estate()
     {
-        return $this->belongsTo('estates');
+        return $this->hasOne(Estate::class,'id','estate_id');
     }
+    
+    public function bookingtype()
+    {
+        return $this->hasOne(BookingType::class,'id','booking_type_id');
+    }    
 }
